@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-describe 'Players::Human' do
+describe 'Human' do
   it 'inherits from Player' do
-    expect(Players::Human.ancestors).to include(Player)
+    expect(Human.ancestors).to include(Player)
   end
 
   describe '#move' do
     it 'asks the user for input and returns it' do
-      human = Players::Human.new("X")
+      human = Human.new("X")
       allow($stdout).to receive(:puts)
 
       expect(human).to receive(:gets).and_return("1")
